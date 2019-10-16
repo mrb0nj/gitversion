@@ -4,7 +4,7 @@ const exec = require('@actions/exec');
 (async () => {
   try {
     // `args` input defined in action metadata file
-    const args = core.getInput('args');
+    const args = core.getInput('args').split(' ');
     console.log(`Running GitVersion with args: ${args}`);
     
     var gitversion = "";
@@ -16,7 +16,7 @@ const exec = require('@actions/exec');
       }
     };
 
-    await exec.exec("GitVersion", [], options);
+    await exec.exec("GitVersion", args, options);
     
     const data = JSON.parse(gitversion);
 
