@@ -1,23 +1,23 @@
-# Hello world JavaScript action
+# GitVersion action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action sets output variables for GitVersion
 
 ## Inputs
 
-### `who-to-greet`
+### `args`
 
-**Required** The name of the person to greet. Default `"World"`.
+any command line arguments for GitVersion
 
 ## Outputs
 
-### `time`
+### `fullsemver`
 
-The time we greeted you.
+The Full SemVer version number discovered by GitVersion
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@master
+uses: mrb0nj/gitversion@master
 with:
-  who-to-greet: 'Mona the Octocat'
+  args: '-output buildserver'
 ```

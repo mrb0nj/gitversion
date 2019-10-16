@@ -1,13 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Git Version'
+description: 'Retrieve the GitVersion output'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  args:  # id of input
+    description: 'GitVersion Arguments'
+    required: false
+    default: ''
 outputs:
-  time: # id of output
-    description: 'The time we we greeted you'
+  fullsemver: # id of output
+    description: 'Full SemVer discovered by GitVersion'
 runs:
   using: 'node12'
   main: 'index.js'

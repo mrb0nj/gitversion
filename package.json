@@ -1,5 +1,5 @@
 {
-  "name": "hello-world-javascript-action",
+  "name": "gitversion",
   "version": "1.0.0",
   "description": "This action prints \"Hello World\" or \"Hello\" + the name of a person to greet to the log.",
   "main": "index.js",
@@ -8,17 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/hello-world-javascript-action.git"
+    "url": "git+https://github.com/mrb0nj/gitversion.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/actions/hello-world-javascript-action/issues"
+    "url": "https://github.com/mrb0nj/gitversion/issues"
   },
-  "homepage": "https://github.com/actions/hello-world-javascript-action#readme",
+  "homepage": "https://github.com/mrb0nj/gitversion#readme",
   "dependencies": {
     "@actions/core": "^1.1.0",
+    "@actions/exec": "^1.0.1",
     "@actions/github": "^1.1.0"
   }
 }
