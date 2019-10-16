@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 
-await getVersion();
+getVersion();
 
 async function getVersion() {
   try {
