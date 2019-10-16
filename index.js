@@ -18,7 +18,7 @@ const exec = require('@actions/exec');
 
     await exec.exec("GitVersion", [], options);
     
-    core.setOutput('fullsemver', gitversion);
+    core.setOutput('fullsemver', gitversion.FullSemVer);
     console.log(`GitVersion: ${gitversion}`);
   } catch (error) {
     core.setFailed(error.message);
