@@ -1,9 +1,7 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 
-getVersion();
-
-async function getVersion() {
+(async () => {
   try {
     // `args` input defined in action metadata file
     const args = core.getInput('args');
@@ -18,11 +16,11 @@ async function getVersion() {
       }
     };
 
-    await exec.exec("GitVersion", [args], options);
+    await exec.exec("GitVersion", [], options);
     
     core.setOutput('fullsemver', gitversion);
     console.log(`GitVersion: ${gitversion}`);
   } catch (error) {
     core.setFailed(error.message);
   }
-}
+})();
