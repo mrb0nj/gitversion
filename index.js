@@ -21,7 +21,7 @@ const exec = require('@actions/exec');
     // checkout the base branch
     await exec.exec("git", ["checkout", "master"]);
     await exec.exec("git", ["checkout", ref]);
-    await exec.exec("git", ["checkout", sha]);
+    await exec.exec("git", ["checkout", "--progress", "--force", sha]);
 
     // get the gitversion stdout
     await exec.exec("GitVersion", args, options);
