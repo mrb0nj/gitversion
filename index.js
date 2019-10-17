@@ -4,6 +4,8 @@ const exec = require('@actions/exec');
 (async () => {
   try {
     // `args` input defined in action metadata file
+    var ref = core.getInput('ref').replace('refs/heads', '');
+    var sha = core.getInput('sha');
     const args = core.getInput('args').split(' ');
     console.log(`Running GitVersion with args: ${args}`);
     
@@ -16,6 +18,12 @@ const exec = require('@actions/exec');
       }
     };
 
+    // checkout the base branch
+    await exec.exec("git", ["checkout", "master"]);
+    await exec.exec("git", ["checkout", ref]);
+    await exec.exec("git", ["checkout", sha]);
+
+    // get the gitversion stdout
     await exec.exec("GitVersion", args, options);
     
     const data = JSON.parse(gitversion);
