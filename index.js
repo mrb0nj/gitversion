@@ -4,7 +4,7 @@ const exec = require('@actions/exec');
 (async () => {
   try {
     // `args` input defined in action metadata file
-    var ref = core.getInput('ref').replace('refs/heads', '');
+    var ref = core.getInput('ref').replace('refs/heads/', '');
     var sha = core.getInput('sha');
     const args = core.getInput('args').split(' ');
     console.log(`Running GitVersion with args: ${args}`);
