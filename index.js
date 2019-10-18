@@ -7,7 +7,6 @@ const exec = require('@actions/exec');
     var ref = core.getInput('ref').replace('refs/heads/', '');
     var sha = core.getInput('sha');
     const args = core.getInput('args').split(' ');
-    console.log(`Running GitVersion with args: ${args}`);
     
     var gitversion = "";
     const options = {};
@@ -36,6 +35,7 @@ const exec = require('@actions/exec');
     core.setOutput('fullsemver', data.FullSemVer);
     core.setOutput('assemblysemver', data.AssemblySemVer);
     core.setOutput('gitversion', gitversion);
+    core.setOutput('nugetversion', data.NuGetVersionV2);
 
     console.log(`GitVersion: ${gitversion}`);
   } catch (error) {

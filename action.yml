@@ -30,6 +30,8 @@ outputs:
     description: 'Assembly SemVer'
   gitversion:
     description: 'Full GitVersion response'
+  nugetversion:
+    description: 'Nuget Version'
 runs:
   using: 'node12'
   main: 'index.js'
