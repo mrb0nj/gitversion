@@ -5,14 +5,6 @@ inputs:
     description: 'GitVersion Arguments'
     required: false
     default: ''
-  ref:
-    description: 'Branch from which event is triggered from - will be checked out to get history'
-    required: true
-    default: ''
-  sha:
-    description: 'Commit id to checkout'
-    required: true
-    default: ''
 outputs:
   major:
     description: 'Major version number'
